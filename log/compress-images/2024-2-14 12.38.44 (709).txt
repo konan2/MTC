@@ -1,0 +1,8 @@
+File from: [app/images/src/content/Bitmap-4.png]
+
+File to: [app/images/dest/content/Bitmap-4.png]
+
+Compression algorithm: [pngquant]
+
+Description: Error: Command failed: /Users/konan2/projects/MTC/node_modules/pngquant-bin/vendor/pngquant --quality=75-100 -o app/images/dest/content/Bitmap-4.png app/images/src/content/Bitmap-4.png
+  error: failed writing image to app/images/dest/content/Bitmap-4.png (16)
