@@ -128,26 +128,10 @@ a
     background: #fff
     color: #000
     box-shadow: 0 0 10px rgba(0,0,0,.2)
-    padding: 60px 40px
+    padding: 24px 40px
     min-width: 320px
     max-width: 90vw
     z-index: 1
-    &::before
-      content: ''
-      position: absolute
-      left: 30px
-      right: 30px
-      top: 150px
-      height: 1px
-      background-color: rgba(0,0,0, 0.3)
-    &::after
-      content: ''
-      position: absolute
-      left: 30px
-      right: 30px
-      bottom: 30px
-      height: 1px
-      background-color: rgba(0,0,0, 0.3)
     .navbar-toggler
       color: #777
       position: absolute
@@ -156,12 +140,21 @@ a
     .navbar-nav
       margin: 0
       padding: 0
+      border-bottom: 1px solid  rgba(0,0,0, 0.3)
+      align-items: stretch
+      text-align: center
+      min-height: 100%
+      overflow: auto
+      max-height: 100%
     .nav-link
         color: $primary
         padding: 20px 0
     .top-menu__logo
       order: -1
-      margin-bottom: 40px
+      flex-grow: 0
+      padding-bottom: 40px
+      width: 100%
+      border-bottom: 1px solid  rgba(0,0,0, 0.3)
       .nav-link
         color: #777
 
@@ -194,8 +187,8 @@ a
 
 
 .full-screen-slider
-  height: 100vh
-  max-height: 100vh
+  height: 100vh 
+  height: calc(var(--vh, 1vh) * 100)
   
 .full-screen-slider__carousel-indicators
   margin-bottom: 25px
@@ -463,4 +456,22 @@ a
   .carousel-caption
     left: 0
     right: 0
+
+
+@media (max-device-width: 1024px) and (orientation: landscape)
+  .top-menu
+    margin-bottom: -80px
+
+  .navbar
+    min-height: 80px
+    padding: 0
+
+  .full-screen-slider__title
+    font-size: 34px
+
+  .post
+    min-height: auto
+
+  .feedback-section__slide
+    min-height: 140vh
 
