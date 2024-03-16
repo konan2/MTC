@@ -133,10 +133,12 @@ h3
     padding: 16px 40px 24px
     min-width: 320px
     max-width: 90vw
+    max-height: 100vh
+    overflow: auto
     z-index: 1
     .navbar-toggler
       color: #777
-      position: absolute
+      position: fixed
       right: 10px
       top: 34px
     .navbar-nav
@@ -145,9 +147,7 @@ h3
       border-bottom: 1px solid  rgba(0,0,0, 0.3)
       align-items: stretch
       text-align: center
-      min-height: 100%
-      overflow: auto
-      max-height: 100%
+
     .nav-link
         color: $primary
         padding: 20px 0
@@ -191,7 +191,6 @@ h3
 
 .full-screen-slider
   height: 100vh 
-  height: calc(var(--vh, 1vh) * 100)
   
 .full-screen-slider__carousel-indicators
   margin-bottom: 25px
@@ -456,6 +455,10 @@ h3
   .post__article
     padding: 40px
     
+  .arrow-left, .arrow-right
+    width: 24px
+    height: 24px
+
   .carousel-caption
     left: 0
     right: 0
