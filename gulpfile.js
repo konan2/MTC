@@ -1,3 +1,4 @@
+const gulp = require('gulp');
 
 // Определяем переменную "preprocessor"
 let preprocessor = 'sass'; // Выбор препроцессора в проекте - sass или less
@@ -57,6 +58,9 @@ function scripts() {
 	.pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
 }
 
+
+
+
 function styles() {
 	return src('app/' + preprocessor + '/main.' + preprocessor + '') // Выбираем источник: "app/sass/main.sass" или "app/less/main.less"
 	.pipe(eval(preprocessor)()) // Преобразуем значение переменной "preprocessor" в функцию
@@ -83,6 +87,19 @@ async function images() {
 		}
 	)
 }
+
+
+
+
+function fonts() {
+  return gulp.src('app/webfonts/**/*')
+    .pipe(gulp.dest('app/build/webfonts'));
+}
+  
+  
+
+
+
 
 function cleanimg() {
 	return src('app/images/dest/', {allowEmpty: true}).pipe(clean()) // Удаляем папку "app/images/dest/"
@@ -134,6 +151,8 @@ exports.scripts = scripts;
 // Экспортируем функцию styles() в таск styles
 exports.styles = styles;
 
+exports.fonts = fonts;
+
 // Экспорт функции images() в таск images
 exports.images = images;
 
@@ -141,7 +160,7 @@ exports.images = images;
 exports.cleanimg = cleanimg;
 
 // Экспортируем дефолтный таск с нужным набором функций
-exports.default = parallel(styles, scripts, browsersync, startwatch);
+exports.default = parallel(styles, fonts, scripts, browsersync, startwatch);
 
 // Создаем новый таск "build", который последовательно выполняет нужные операции
-exports.build = series(cleandist, styles, scripts, images, buildcopy);
+exports.build = series(cleandist, styles, fonts, scripts, images, buildcopy);

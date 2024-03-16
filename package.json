@@ -22,6 +22,7 @@
     "gulp-less": "^5.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-uglify-es": "^3.0.0",
+    "gulp-webfont": "^0.0.1-4",
     "pngquant-bin": "^6.0.0",
     "require-dir": "^1.2.0",
     "sass": "^1.71.1"
@@ -34,6 +35,7 @@
     "bigger-picture": "^1.1.15",
     "bootstrap": "^5.3.3",
     "chokidar": "^3.6.0",
+    "fontforge": "^0.0.4",
     "jquery": "^3.7.1",
     "lg-autoplay": "^1.2.1",
     "lg-fullscreen": "^1.2.1",
