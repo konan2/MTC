@@ -95,7 +95,7 @@ function buildcopy() {
 		'app/images/dest/**/*',
 		'app/**/*.html',
 		], { base: 'app' }) // Параметр "base" сохраняет структуру проекта при копировании
-	.pipe(dest('app/build/')) // Выгружаем в папку с финальной сборкой
+	.pipe(dest('app/build')) // Выгружаем в папку с финальной сборкой
 }
 
 function cleandist() {
